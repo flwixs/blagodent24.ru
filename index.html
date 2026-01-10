@@ -201,5 +201,33 @@
   © 2026 БлагоДент24
 </footer>
 
+<form id="appointmentForm" class="appointment-form">
+  <input type="text" name="name" placeholder="Имя / 姓名" required>
+  <input type="tel" name="phone" placeholder="Телефон / 电话" required>
+
+  <select name="service">
+    <option value="">Услуга / 服务</option>
+    <option>Терапевтическое лечение / 治疗</option>
+    <option>Хирургия / 外科</option>
+    <option>Имплантация / 种植</option>
+  </select>
+
+  <button type="submit">
+    Записаться / 预约
+  </button>
+</form>
+
+  <div class="lang-switch">
+  <span onclick="setLang('ru')">🇷🇺</span>
+  <span onclick="setLang('zh')">🇨🇳</span>
+</div>
+
+<script>
+  function setLang(lang) {
+    document.documentElement.lang = lang;
+    location.reload();
+  }
+</script>
+
 </body>
 </html>
