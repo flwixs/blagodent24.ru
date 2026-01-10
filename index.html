@@ -203,42 +203,6 @@
   © 2026 БлагоДент24
 </footer>
 
-<section class="contacts" id="contacts">
-  <h2>Запись на приём</h2>
-
-  <form id="appointmentForm" class="appointment-form">
-    <input
-      type="text"
-      name="name"
-      placeholder="Ваше имя"
-      required
-    >
-
-    <input
-      type="tel"
-      name="phone"
-      placeholder="Телефон"
-      required
-    >
-
-    <select name="service">
-      <option value="">Выберите услугу</option>
-      <option value="Лечение кариеса">Лечение кариеса</option>
-      <option value="Пульпит">Пульпит</option>
-      <option value="Удаление зуба">Удаление зуба</option>
-    </select>
-
-    <button type="submit">
-      Записаться
-    </button>
-  </form>
-</section>
-
-  <div class="lang-switch">
-  <span onclick="setLang('ru')">🇷🇺</span>
-  <span onclick="setLang('zh')">🇨🇳</span>
-</div>
-
 <script>
   function setLang(lang) {
     document.documentElement.lang = lang;
