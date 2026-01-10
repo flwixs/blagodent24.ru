@@ -128,6 +128,7 @@ nav a {
   text-align: right;
   color: #b91c1c;
   font-weight: bold;
+  white-space: nowrap;
 }
 
 .main-service-row {
@@ -149,24 +150,25 @@ nav a {
 }
 
 .service-row {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 40px 140px;
   align-items: center;
-  justify-content: space-between;
-  gap: 16px;
+  column-gap: 10px;
 }
 
 .service-name {
-  flex: 1;
+  font-size: 15px;
 }
 
 .toggle {
-  width: 24px;
-  height: 24px;
+  width: 32px;
+  height: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 18px;
   font-weight: bold;
+  cursor: pointer;
   transition: transform .3s ease;
 }
 
