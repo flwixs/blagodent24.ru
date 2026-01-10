@@ -9,11 +9,15 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
+
+  /* Китайская медицина: спокойствие + энергия */
   background:
-    radial-gradient(circle at top left, rgba(185,28,28,0.15), transparent 40%),
-    radial-gradient(circle at bottom right, rgba(127,29,29,0.2), transparent 45%),
-    linear-gradient(180deg, #f8fafc, #eef2f7);
+    radial-gradient(circle at top left, rgba(185, 28, 28, 0.12), transparent 45%),
+    radial-gradient(circle at bottom right, rgba(16, 185, 129, 0.10), transparent 45%),
+    linear-gradient(180deg, #fdfefe, #f1f5f9);
+
   min-height: 100vh;
+  color: #1f2933;
 }
 
 /* =========================
@@ -81,9 +85,9 @@ nav a {
 .price-card {
   background: white;
   border-radius: 14px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-  overflow: hidden;
-  margin-bottom: 30px;
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.08),
+    0 0 0 1px rgba(0,0,0,0.03);
 }
 
 .price-header {
