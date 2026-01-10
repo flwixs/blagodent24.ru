@@ -67,10 +67,10 @@ nav a {
 
 /* HERO */
 .hero {
+  background: transparent; /* уберёт сильный красный */
   padding: 90px 20px;
   text-align: center;
-  color: white;
-  background: linear-gradient(135deg, #7f1d1d, #b91c1c);
+  color: #1f2937;
 }
 
 /* PRICES */
