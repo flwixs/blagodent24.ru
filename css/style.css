@@ -196,3 +196,12 @@ nav a {
     display: none;
   }
 }
+/* === FORCE BACKGROUND TEST === */
+html, body {
+  background: linear-gradient(
+    135deg,
+    #064e3b,
+    #065f46,
+    #022c22
+  ) !important;
+}
