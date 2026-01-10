@@ -1,104 +1,108 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>БлагоДент24 — Москва</title>
-<link rel="stylesheet" href="css/style.css?v=2">
+  <meta charset="UTF-8">
+  <title>БлагоДент24 — стоматология</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
+<!-- Китайский узор 祥云 -->
+<div class="cloud-pattern"></div>
+
 <header class="header">
-  <div class="logo">БлагоДент<span>24</span></div>
+  <div class="logo">Благо<span>Дент</span>24</div>
   <nav>
-    <a href="#price">Услуги</a>
+    <a href="#prices">Услуги</a>
     <a href="#contacts">Контакты</a>
   </nav>
 </header>
 
 <section class="hero">
-  <h1>Стоматология БлагоДент24</h1>
-  <p>Качество, проверенное временем и международным сотрудничеством</p>
+  <h1>Современная стоматология</h1>
+  <p>Гармония медицины, технологий и качества</p>
   <button>Записаться на приём</button>
 </section>
 
-<section id="price" class="price-section">
-<h2>Услуги и цены</h2>
+<section id="prices" class="price-section">
 
-<div class="price-card">
-<div class="price-header">Терапевтическое лечение</div>
-<table class="price-table">
+  <!-- ТЕРАПИЯ -->
+  <div class="price-card">
+    <div class="price-header">
+      <i class="fa-solid fa-tooth"></i> Терапевтическое лечение
+    </div>
 
-<tr class="main-service-row">
-<td>Первичная консультация <span class="toggle">+</span></td>
-<td class="price">от 4 500 ₽</td>
-</tr>
-<tr class="details-row"><td colspan="2"><div class="details">
-<div><span>Осмотр врача</span><span>включено</span></div>
-<div><span>Анестезия</span><span>1 500 ₽</span></div>
-<div><span>Рентген</span><span>1 200 ₽</span></div>
-</div></td></tr>
+    <table class="price-table">
+      <tr class="main-service-row">
+        <td>Лечение кариеса <span class="toggle">+</span></td>
+        <td class="price">от 9 000 ₽</td>
+      </tr>
+      <tr class="details-row">
+        <td colspan="2">
+          <div class="details">
+            <div><span>Анестезия</span><span>1 500 ₽</span></div>
+            <div><span>Препарирование</span><span>4 500 ₽</span></div>
+            <div><span>Пломбирование</span><span>6 000 ₽</span></div>
+          </div>
+        </td>
+      </tr>
 
-<tr class="main-service-row">
-<td>Лечение кариеса <span class="toggle">+</span></td>
-<td class="price">от 15 000 ₽</td>
-</tr>
-<tr class="details-row"><td colspan="2"><div class="details">
-<div><span>Препарирование</span><span>6 000 ₽</span></div>
-<div><span>Пломба</span><span>7 500 ₽</span></div>
-<div><span>Анестезия</span><span>1 500 ₽</span></div>
-</div></td></tr>
+      <tr class="main-service-row">
+        <td>Пульпит <span class="toggle">+</span></td>
+        <td class="price">от 15 000 ₽</td>
+      </tr>
+      <tr class="details-row">
+        <td colspan="2">
+          <div class="details">
+            <div><span>Анестезия</span><span>1 500 ₽</span></div>
+            <div><span>Лечение каналов</span><span>10 000 ₽</span></div>
+            <div><span>Восстановление</span><span>6 000 ₽</span></div>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
 
-<tr class="main-service-row">
-<td>Лечение пульпита <span class="toggle">+</span></td>
-<td class="price">от 27 000 ₽</td>
-</tr>
-<tr class="details-row"><td colspan="2"><div class="details">
-<div><span>Обработка каналов</span><span>12 000 ₽</span></div>
-<div><span>Пломбирование</span><span>10 500 ₽</span></div>
-<div><span>Анестезия</span><span>1 500 ₽</span></div>
-</div></td></tr>
+  <!-- ХИРУРГИЯ -->
+  <div class="price-card">
+    <div class="price-header red">
+      <i class="fa-solid fa-syringe"></i> Хирургия
+    </div>
 
-</table>
-</div>
-
-<div class="price-card">
-<div class="price-header">Хирургия</div>
-<table class="price-table">
-<tr class="main-service-row">
-<td>Удаление зуба <span class="toggle">+</span></td>
-<td class="price">от 12 000 ₽</td>
-</tr>
-<tr class="details-row"><td colspan="2"><div class="details">
-<div><span>Простое удаление</span><span>12 000 ₽</span></div>
-<div><span>Сложное удаление</span><span>18 000 ₽</span></div>
-</div></td></tr>
-</table>
-</div>
-
-<div class="price-card">
-<div class="price-header">Имплантация</div>
-<table class="price-table">
-<tr class="main-service-row">
-<td>Имплантация (1 имплант) <span class="toggle">+</span></td>
-<td class="price">от 135 000 ₽</td>
-</tr>
-<tr class="details-row"><td colspan="2"><div class="details">
-<div><span>Имплант</span><span>90 000 ₽</span></div>
-<div><span>Установка</span><span>45 000 ₽</span></div>
-</div></td></tr>
-</table>
-</div>
+    <table class="price-table">
+      <tr class="main-service-row">
+        <td>Удаление зуба <span class="toggle">+</span></td>
+        <td class="price">от 12 000 ₽</td>
+      </tr>
+      <tr class="details-row">
+        <td colspan="2">
+          <div class="details">
+            <div><span>Анестезия</span><span>2 000 ₽</span></div>
+            <div><span>Удаление</span><span>8 000 ₽</span></div>
+            <div><span>Обработка</span><span>3 000 ₽</span></div>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
 
 </section>
 
 <section id="contacts" class="contacts">
-<h2>Контакты</h2>
-<p>Москва</p>
-<p>Партнёр: Красная Панда</p>
+  <h2>Контакты</h2>
+  <p>Москва</p>
+  <p>Партнёр: <strong>Красная Панда</strong></p>
 </section>
 
-<footer class="footer">© 2026 БлагоДент24</footer>
+<footer class="footer">
+  © 2026 БлагоДент24
+</footer>
 
 <script src="js/script.js"></script>
 </body>
