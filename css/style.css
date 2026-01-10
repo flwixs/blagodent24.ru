@@ -148,6 +148,33 @@ nav a {
   display: none;
 }
 
+.service-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.service-name {
+  flex: 1;
+}
+
+.toggle {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: bold;
+  transition: transform .3s ease;
+}
+
+.main-service-row.active .toggle {
+  transform: rotate(45deg);
+}
+
+
 .details {
   background: #f8fafc;
   padding: 14px;
