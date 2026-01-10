@@ -15,6 +15,7 @@ body {
   padding: 0 20px;
 }
 
+/* HEADER */
 .header {
   background: white;
   position: sticky;
@@ -46,12 +47,13 @@ nav a {
 }
 
 .lang-switch button {
+  background: none;
   border: none;
-  background: transparent;
   font-size: 20px;
   cursor: pointer;
 }
 
+/* HERO */
 .hero {
   position: relative;
   padding: 90px 0;
@@ -73,12 +75,10 @@ nav a {
 
 .hero h1 {
   font-size: 40px;
-  margin-bottom: 10px;
 }
 
 .hero p {
   font-size: 18px;
-  margin-bottom: 30px;
 }
 
 .hero button {
@@ -87,10 +87,10 @@ nav a {
   border: none;
   background: #b91c1c;
   color: white;
-  font-size: 16px;
   cursor: pointer;
 }
 
+/* PRICES */
 .price-section {
   padding: 60px 0;
 }
@@ -124,6 +124,25 @@ nav a {
   border-bottom: 1px solid #e5e7eb;
 }
 
+.service-row {
+  display: grid;
+  grid-template-columns: 1fr 36px 140px;
+  align-items: center;
+}
+
+.toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: bold;
+  transition: transform .3s;
+}
+
+.main-service-row.active .toggle {
+  transform: rotate(45deg);
+}
+
 .price {
   text-align: right;
   color: #b91c1c;
@@ -131,51 +150,9 @@ nav a {
   white-space: nowrap;
 }
 
-.main-service-row {
-  cursor: pointer;
-  background: #f9fafb;
-}
-
-.toggle {
-  font-weight: bold;
-  transition: .3s;
-}
-
-.main-service-row.active .toggle {
-  transform: rotate(45deg);
-}
-
 .details-row {
   display: none;
 }
-
-.service-row {
-  display: grid;
-  grid-template-columns: 1fr 40px 140px;
-  align-items: center;
-  column-gap: 10px;
-}
-
-.service-name {
-  font-size: 15px;
-}
-
-.toggle {
-  width: 32px;
-  height: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 18px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: transform .3s ease;
-}
-
-.main-service-row.active .toggle {
-  transform: rotate(45deg);
-}
-
 
 .details {
   background: #f8fafc;
@@ -191,6 +168,7 @@ nav a {
   padding: 6px 0;
 }
 
+/* FOOTER */
 .contacts {
   text-align: center;
   padding: 60px 0;
