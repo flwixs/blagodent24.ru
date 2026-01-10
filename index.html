@@ -38,6 +38,62 @@
       Гармония медицины, технологий и качества
     </p>
 
+<section class="appointment">
+  <div class="appointment-card">
+    <h2 data-ru="Запись на приём" data-cn="预约挂号">
+      Запись на приём
+    </h2>
+    <p class="subtitle"
+       data-ru="Оставьте данные — мы свяжемся с вами"
+       data-cn="请留下您的信息，我们会与您联系">
+      Оставьте данные — мы свяжемся с вами
+    </p>
+
+    <form id="appointmentForm">
+      <div class="field">
+        <label data-ru="Имя" data-cn="姓名">Имя</label>
+        <input type="text" required
+               data-ru-placeholder="Ваше имя"
+               data-cn-placeholder="请输入姓名">
+      </div>
+
+      <div class="field">
+        <label data-ru="Телефон" data-cn="电话">Телефон</label>
+        <input type="tel" required
+               data-ru-placeholder="+7 (___) ___-__-__"
+               data-cn-placeholder="电话号码">
+      </div>
+
+      <div class="field">
+        <label data-ru="Услуга" data-cn="服务项目">Услуга</label>
+        <select required>
+          <option data-ru="Первичная консультация" data-cn="初诊咨询">
+            Первичная консультация
+          </option>
+          <option data-ru="Лечение кариеса" data-cn="龋齿治疗">
+            Лечение кариеса
+          </option>
+          <option data-ru="Имплантация" data-cn="种植牙">
+            Имплантация
+          </option>
+        </select>
+      </div>
+
+      <button type="submit"
+              data-ru="Записаться"
+              data-cn="提交预约">
+        Записаться
+      </button>
+
+      <p class="note"
+         data-ru="Нажимая кнопку, вы соглашаетесь на обработку данных"
+         data-cn="点击按钮即表示您同意个人信息处理">
+        Нажимая кнопку, вы соглашаетесь на обработку данных
+      </p>
+    </form>
+  </div>
+</section>
+    
     <button data-ru="Записаться на приём"
             data-cn="预约就诊">
       Записаться на приём
