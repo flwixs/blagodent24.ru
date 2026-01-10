@@ -2,108 +2,150 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>БлагоДент24 — стоматология</title>
+  <title>БлагоДент24</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Font Awesome -->
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<!-- Китайский узор 祥云 -->
-<div class="chinese-clouds"></div>
-
 <header class="header">
-  <div class="logo">Благо<span>Дент</span>24</div>
-  <nav>
-    <a href="#prices">Услуги</a>
-    <a href="#contacts">Контакты</a>
-  </nav>
+  <div class="container header-inner">
+    <div class="logo">Благо<span>Дент24</span></div>
+
+    <nav>
+      <a href="#services" data-ru="Услуги" data-cn="服务">Услуги</a>
+      <a href="#contacts" data-ru="Контакты" data-cn="联系方式">Контакты</a>
+    </nav>
+
+    <div class="lang-switch">
+      <button onclick="setLang('ru')">🇷🇺</button>
+      <button onclick="setLang('cn')">🇨🇳</button>
+    </div>
+  </div>
 </header>
 
 <section class="hero">
-  <h1>Современная стоматология</h1>
-  <p>Гармония медицины, технологий и качества</p>
-  <button>Записаться на приём</button>
+  <div class="chinese-clouds"></div>
+
+  <div class="container">
+    <h1 data-ru="Современная стоматология"
+        data-cn="现代牙科">
+      Современная стоматология
+    </h1>
+
+    <p data-ru="Гармония медицины, технологий и качества"
+       data-cn="医学、技术与品质的和谐">
+      Гармония медицины, технологий и качества
+    </p>
+
+    <button data-ru="Записаться на приём"
+            data-cn="预约就诊">
+      Записаться на приём
+    </button>
+  </div>
 </section>
 
-<section id="prices" class="price-section">
+<section id="services" class="price-section">
+  <div class="container">
 
-  <!-- ТЕРАПИЯ -->
-  <div class="price-card">
-    <div class="price-header">
-      <i class="fa-solid fa-tooth"></i> Терапевтическое лечение
+    <h2 data-ru="Услуги и цены"
+        data-cn="服务与价格">
+      Услуги и цены
+    </h2>
+
+    <!-- Терапия -->
+    <div class="price-card">
+      <div class="price-header">🦷 <span data-ru="Терапевтическое лечение" data-cn="治疗牙科">Терапевтическое лечение</span></div>
+
+      <table class="price-table">
+        <tr class="main-service-row" onclick="toggleDetails(this)">
+          <td data-ru="Лечение кариеса" data-cn="龋齿治疗">Лечение кариеса</td>
+          <td class="toggle">+</td>
+          <td class="price">от 9 000 ₽</td>
+        </tr>
+        <tr class="details-row">
+          <td colspan="3">
+            <div class="details">
+              <div><span>Анестезия</span><span>1 500 ₽</span></div>
+              <div><span>Препарирование</span><span>3 000 ₽</span></div>
+              <div><span>Пломбирование</span><span>4 500 ₽</span></div>
+            </div>
+          </td>
+        </tr>
+
+        <tr class="main-service-row" onclick="toggleDetails(this)">
+          <td data-ru="Пульпит" data-cn="牙髓炎">Пульпит</td>
+          <td class="toggle">+</td>
+          <td class="price">от 15 000 ₽</td>
+        </tr>
+        <tr class="details-row">
+          <td colspan="3">
+            <div class="details">
+              <div><span>Анестезия</span><span>1 500 ₽</span></div>
+              <div><span>Обработка каналов</span><span>7 000 ₽</span></div>
+              <div><span>Пломбирование</span><span>6 500 ₽</span></div>
+            </div>
+          </td>
+        </tr>
+      </table>
     </div>
 
-    <table class="price-table">
-      <tr class="main-service-row">
-        <td>Лечение кариеса <span class="toggle">+</span></td>
-        <td class="price">от 9 000 ₽</td>
-      </tr>
-      <tr class="details-row">
-        <td colspan="2">
-          <div class="details">
-            <div><span>Анестезия</span><span>1 500 ₽</span></div>
-            <div><span>Препарирование</span><span>4 500 ₽</span></div>
-            <div><span>Пломбирование</span><span>6 000 ₽</span></div>
-          </div>
-        </td>
-      </tr>
+    <!-- Хирургия -->
+    <div class="price-card">
+      <div class="price-header red">🩺 <span data-ru="Хирургия" data-cn="口腔外科">Хирургия</span></div>
 
-      <tr class="main-service-row">
-        <td>Пульпит <span class="toggle">+</span></td>
-        <td class="price">от 15 000 ₽</td>
-      </tr>
-      <tr class="details-row">
-        <td colspan="2">
-          <div class="details">
-            <div><span>Анестезия</span><span>1 500 ₽</span></div>
-            <div><span>Лечение каналов</span><span>10 000 ₽</span></div>
-            <div><span>Восстановление</span><span>6 000 ₽</span></div>
-          </div>
-        </td>
-      </tr>
-    </table>
-  </div>
-
-  <!-- ХИРУРГИЯ -->
-  <div class="price-card">
-    <div class="price-header red">
-      <i class="fa-solid fa-syringe"></i> Хирургия
+      <table class="price-table">
+        <tr class="main-service-row" onclick="toggleDetails(this)">
+          <td data-ru="Удаление зуба" data-cn="拔牙">Удаление зуба</td>
+          <td class="toggle">+</td>
+          <td class="price">от 12 000 ₽</td>
+        </tr>
+        <tr class="details-row">
+          <td colspan="3">
+            <div class="details">
+              <div><span>Анестезия</span><span>2 000 ₽</span></div>
+              <div><span>Удаление</span><span>7 000 ₽</span></div>
+              <div><span>Обработка</span><span>3 000 ₽</span></div>
+            </div>
+          </td>
+        </tr>
+      </table>
     </div>
 
-    <table class="price-table">
-      <tr class="main-service-row">
-        <td>Удаление зуба <span class="toggle">+</span></td>
-        <td class="price">от 12 000 ₽</td>
-      </tr>
-      <tr class="details-row">
-        <td colspan="2">
-          <div class="details">
-            <div><span>Анестезия</span><span>2 000 ₽</span></div>
-            <div><span>Удаление</span><span>8 000 ₽</span></div>
-            <div><span>Обработка</span><span>3 000 ₽</span></div>
-          </div>
-        </td>
-      </tr>
-    </table>
   </div>
-
 </section>
 
 <section id="contacts" class="contacts">
-  <h2>Контакты</h2>
-  <p>Москва</p>
-  <p>Партнёр: <strong>Красная Панда</strong></p>
+  <div class="container">
+    <h2 data-ru="Контакты" data-cn="联系方式">Контакты</h2>
+    <p data-ru="Москва · клиника «Красная Панда»"
+       data-cn="莫斯科 · 红熊猫牙科">
+      Москва · клиника «Красная Панда»
+    </p>
+  </div>
 </section>
 
 <footer class="footer">
   © 2026 БлагоДент24
 </footer>
 
-<script src="js/script.js"></script>
+<script>
+function toggleDetails(row) {
+  row.classList.toggle('active');
+  const next = row.nextElementSibling;
+  next.style.display = next.style.display === 'table-row' ? 'none' : 'table-row';
+}
+
+function setLang(lang) {
+  document.querySelectorAll('[data-ru]').forEach(el => {
+    el.textContent = el.dataset[lang];
+  });
+  localStorage.setItem('siteLang', lang);
+}
+
+setLang(localStorage.getItem('siteLang') || 'ru');
+</script>
+
 </body>
 </html>
