@@ -180,3 +180,80 @@ nav a {
   background: #111;
   color: white;
 }
+
+.appointment {
+  padding: 80px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.appointment-card {
+  max-width: 520px;
+  width: 100%;
+  background: rgba(255,255,255,0.95);
+  border-radius: 24px;
+  padding: 40px;
+  box-shadow: 0 20px 50px rgba(0,0,0,.15);
+  animation: breathing 10s ease-in-out infinite;
+}
+
+.appointment h2 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  text-align: center;
+  color: #64748b;
+  margin-bottom: 30px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 18px;
+}
+
+.field label {
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: #334155;
+}
+
+.field input,
+.field select {
+  padding: 14px;
+  border-radius: 14px;
+  border: 1px solid #cbd5e1;
+  font-size: 15px;
+}
+
+.field input:focus,
+.field select:focus {
+  outline: none;
+  border-color: #b91c1c;
+}
+
+.appointment button {
+  width: 100%;
+  margin-top: 10px;
+  padding: 16px;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(135deg,#7f1d1d,#b91c1c);
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.appointment button:hover {
+  opacity: .95;
+}
+
+.note {
+  font-size: 12px;
+  text-align: center;
+  color: #94a3b8;
+  margin-top: 12px;
+}
