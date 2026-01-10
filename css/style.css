@@ -1,30 +1,208 @@
-*{box-sizing:border-box}
-body{margin:0;font-family:Arial;background:#f3f6fb}
-.header{display:flex;justify-content:space-between;padding:16px 32px;background:white;position:sticky;top:0;z-index:10}
-.logo{font-size:22px;font-weight:bold}
-.logo span{color:#b91c1c}
-nav a{margin-left:20px;text-decoration:none;color:#334155}
-.hero{
-padding:90px 20px;
-text-align:center;
-color:white;
-background:
-linear-gradient(135deg,#7f1d1d,#b91c1c,#991b1b);
+/* =========================
+   Базовые настройки
+========================= */
+
+* {
+  box-sizing: border-box;
 }
-.hero button{padding:14px 28px;border:none;border-radius:30px;background:white;color:#7f1d1d;font-size:16px;font-weight:bold}
-.price-section{max-width:1000px;margin:60px auto;padding:20px}
-.price-card{background:white;border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,.1);overflow:hidden;margin-bottom:30px}
-.price-header{padding:18px;color:white;font-size:20px;background:linear-gradient(90deg,#0f4c81,#b91c1c)}
-.price-table{width:100%;border-collapse:collapse}
-.price-table td{padding:16px;border-bottom:1px solid #e5e7eb}
-.price{text-align:right;color:#b91c1c;font-weight:bold}
-.main-service-row{cursor:pointer;background:#f9fafb}
-.toggle{float:right;font-weight:bold;transition:.3s}
-.main-service-row.active .toggle{transform:rotate(45deg)}
-.details-row{display:none}
-.details{background:#f8fafc;padding:14px;border-left:4px solid #0f4c81;border-radius:8px;animation:slide .4s ease}
-.details div{display:flex;justify-content:space-between;font-size:14px;padding:6px 0;border-bottom:1px dashed #d1d5db}
-@keyframes slide{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
-.contacts{text-align:center;padding:60px 20px}
-.footer{text-align:center;padding:20px;background:#111;color:white}
-@media(max-width:700px){nav{display:none}}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(185,28,28,0.15), transparent 40%),
+    radial-gradient(circle at bottom right, rgba(127,29,29,0.2), transparent 45%),
+    linear-gradient(180deg, #f8fafc, #eef2f7);
+  min-height: 100vh;
+}
+
+/* =========================
+   Шапка
+========================= */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 32px;
+  background: white;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.logo span {
+  color: #b91c1c;
+}
+
+nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #334155;
+}
+
+
+/* =========================
+   Hero-блок
+========================= */
+
+.hero {
+  padding: 90px 20px;
+  text-align: center;
+  color: white;
+  background: linear-gradient(
+    135deg,
+    #7f1d1d,
+    #b91c1c,
+    #991b1b
+  );
+}
+
+.hero button {
+  padding: 14px 28px;
+  border: none;
+  border-radius: 30px;
+  background: white;
+  color: #7f1d1d;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+
+/* =========================
+   Блок цен
+========================= */
+
+.price-section {
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 20px;
+}
+
+.price-card {
+  background: white;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.price-header {
+  padding: 18px;
+  color: white;
+  font-size: 20px;
+  background: linear-gradient(
+    90deg,
+    #0f4c81,
+    #b91c1c
+  );
+}
+
+.price-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.price-table td {
+  padding: 16px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.price {
+  text-align: right;
+  color: #b91c1c;
+  font-weight: bold;
+}
+
+
+/* =========================
+   Раскрывающиеся услуги
+========================= */
+
+.main-service-row {
+  cursor: pointer;
+  background: #f9fafb;
+}
+
+.toggle {
+  float: right;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+}
+
+.main-service-row.active .toggle {
+  transform: rotate(45deg);
+}
+
+.details-row {
+  display: none;
+}
+
+.details {
+  background: #f8fafc;
+  padding: 14px;
+  border-left: 4px solid #0f4c81;
+  border-radius: 8px;
+  animation: slide 0.4s ease;
+}
+
+.details div {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  padding: 6px 0;
+  border-bottom: 1px dashed #d1d5db;
+}
+
+.details div:last-child {
+  border-bottom: none;
+}
+
+
+/* =========================
+   Анимации
+========================= */
+
+@keyframes slide {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* =========================
+   Контакты и футер
+========================= */
+
+.contacts {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.footer {
+  text-align: center;
+  padding: 20px;
+  background: #111;
+  color: white;
+}
+
+
+/* =========================
+   Адаптив
+========================= */
+
+@media (max-width: 700px) {
+  nav {
+    display: none;
+  }
+}
