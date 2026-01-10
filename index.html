@@ -48,41 +48,44 @@
       Оставьте данные — мы свяжемся с вами
     </p>
 
-    <form id="appointmentForm">
-      <div class="field">
-        <label data-ru="Имя" data-cn="姓名">Имя</label>
-        <input type="text" required
-               data-ru-placeholder="Ваше имя"
-               data-cn-placeholder="请输入姓名">
-      </div>
+<form id="appointmentForm">
 
-      <div class="field">
-        <label data-ru="Телефон" data-cn="电话">Телефон</label>
-        <input type="tel" required
-               data-ru-placeholder="+7 (___) ___-__-__"
-               data-cn-placeholder="电话号码">
-      </div>
+  <div class="field">
+    <label data-ru="Имя" data-cn="姓名">Имя</label>
+    <input
+      type="text"
+      name="name"
+      required
+      placeholder="Ваше имя"
+    >
+  </div>
 
-      <div class="field">
-        <label data-ru="Услуга" data-cn="服务项目">Услуга</label>
-        <select required>
-          <option data-ru="Первичная консультация" data-cn="初诊咨询">
-            Первичная консультация
-          </option>
-          <option data-ru="Лечение кариеса" data-cn="龋齿治疗">
-            Лечение кариеса
-          </option>
-          <option data-ru="Имплантация" data-cn="种植牙">
-            Имплантация
-          </option>
-        </select>
-      </div>
+  <div class="field">
+    <label data-ru="Телефон" data-cn="电话">Телефон</label>
+    <input
+      type="tel"
+      name="phone"
+      required
+      placeholder="+7 (___) ___-__-__"
+    >
+  </div>
 
-      <button type="submit"
-              data-ru="Записаться"
-              data-cn="提交预约">
-        Записаться
-      </button>
+  <div class="field">
+    <label data-ru="Услуга" data-cn="服务项目">Услуга</label>
+    <select name="service" required>
+      <option value="">Выберите услугу</option>
+      <option value="Первичная консультация">Первичная консультация</option>
+      <option value="Лечение кариеса">Лечение кариеса</option>
+      <option value="Пульпит">Пульпит</option>
+      <option value="Удаление зуба">Удаление зуба</option>
+    </select>
+  </div>
+
+  <button type="submit">
+    Записаться
+  </button>
+
+</form>
 
       <p class="note"
          data-ru="Нажимая кнопку, вы соглашаетесь на обработку данных"
