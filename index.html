@@ -113,27 +113,45 @@
       <table class="price-table">
 
         <!-- Кариес -->
-        <tr class="main-service-row" onclick="toggleDetails(this)">
-          <td colspan="3">
-            <div class="service-row">
-              <span class="service-name" data-ru="Лечение кариеса" data-cn="龋齿治疗">Лечение кариеса</span>
-              <span class="toggle">+</span>
-              <span class="price" data-ru="от 9 000 ₽" data-cn="起价 9000 ₽">от 9 000 ₽</span>
-            </div>
-          </td>
-        </tr>
-        <tr class="details-row">
-          <td colspan="3">
-            <div class="details">
-              <div><span data-ru="Анестезия" data-cn="麻醉">Анестезия</span><span>1 500 ₽</span></div>
-              <div><span data-ru="Препарирование" data-cn="处理">Препарирование</span><span>3 000 ₽</span></div>
-              <div><span data-ru="Пломбирование" data-cn="填充">Пломбирование</span><span>4 500 ₽</span></div>
-            </div>
-          </td>
-        </tr>
+        <tr class="main-service-row">
+  <td colspan="3">
+
+    <div class="service-row">
+      <span class="service-name"
+            data-ru="Лечение кариеса"
+            data-cn="龋齿治疗">
+        Лечение кариеса
+      </span>
+
+      <span class="toggle">+</span>
+
+      <span class="price"
+            data-ru="от 9 000 ₽"
+            data-cn="起价 9000 ₽">
+        от 9 000 ₽
+      </span>
+    </div>
+
+    <div class="details">
+      <div>
+        <span data-ru="Анестезия" data-cn="麻醉">Анестезия</span>
+        <span>1 500 ₽</span>
+      </div>
+      <div>
+        <span data-ru="Препарирование" data-cn="处理">Препарирование</span>
+        <span>3 000 ₽</span>
+      </div>
+      <div>
+        <span data-ru="Пломбирование" data-cn="填充">Пломбирование</span>
+        <span>4 500 ₽</span>
+      </div>
+    </div>
+
+  </td>
+</tr>
 
         <!-- Пульпит -->
-        <tr class="main-service-row" onclick="toggleDetails(this)">
+        <tr class="main-service-row"
           <td colspan="3">
             <div class="service-row">
               <span class="service-name" data-ru="Пульпит" data-cn="牙髓炎">Пульпит</span>
@@ -160,7 +178,7 @@
       <div class="price-header red">🩺 <span data-ru="Хирургия" data-cn="口腔外科">Хирургия</span></div>
 
       <table class="price-table">
-        <tr class="main-service-row" onclick="toggleDetails(this)">
+        <tr class="main-service-row"
           <td colspan="3">
             <div class="service-row">
               <span class="service-name" data-ru="Удаление зуба" data-cn="拔牙">Удаление зуба</span>
@@ -197,13 +215,6 @@
 <footer class="footer">
   © 2026 БлагоДент24
 </footer>
-
-<script>
-  function setLang(lang) {
-    document.documentElement.lang = lang;
-    location.reload();
-  }
-</script>
 
 <script src="js/main.js"></script>
 </body>
