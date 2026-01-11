@@ -1,53 +1,31 @@
-document.addEventListener("DOMContentLoaded", () => {
+/* =========================
+   АККОРДЕОН УСЛУГ
+========================= */
+function toggleDetails(row) {
+  const detailsRow = row.nextElementSibling;
+  const toggle = row.querySelector('.toggle');
 
-  /* ---------- ФОРМА ---------- */
-  const form = document.getElementById("appointmentForm");
-  if (form) {
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
+  const isOpen = detailsRow.style.display === 'table-row';
 
-      const data = new FormData(form);
-
-      const name = data.get("name");
-      const phone = data.get("phone");
-      const service = data.get("service");
-      const date = data.get("date");
-      const time = data.get("time");
-
-      const message = `
-🦷 Новая запись
-👤 Имя: ${name}
-📞 Телефон: ${phone}
-🛠 Услуга: ${service}
-📅 Дата: ${date}
-⏰ Время: ${time}
-      `;
-
-      fetch("https://api.telegram.org/bot8594224012:AAHLhbXSZJTFuDbgJfFwTf73nyGTc-dkB4o/sendMessage", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          chat_id: -1003630823385,
-          text: message
-        })
-      });
-
-      alert("Заявка отправлена / 已发送");
-      form.reset();
-    });
-  }
-
-  /* ---------- РАСКРЫВАЮЩИЕСЯ УСЛУГИ ---------- */
-  document.querySelectorAll(".main-service-row").forEach(row => {
-    row.addEventListener("click", () => {
-      row.classList.toggle("active");
-
-      const details = row.nextElementSibling;
-      if (!details) return;
-
-      details.style.display =
-        details.style.display === "block" ? "none" : "block";
-    });
+  document.querySelectorAll('.details-row').forEach(r => {
+    r.style.display = 'none';
   });
 
-});
+  document.querySelectorAll('.toggle').forEach(t => {
+    t.textContent = '+';
+  });
+
+  if (!isOpen) {
+    detailsRow.style.display = 'table-row';
+    toggle.textContent = '×';
+  }
+}
+
+/* =========================
+   ПЕРЕКЛЮЧЕНИЕ ЯЗЫКА
+========================= */
+function setLang(lang) {
+  document.querySelectorAll('[data-ru]').forEach(el => {
+    el.textContent = el.dataset[lang];
+  });
+}
