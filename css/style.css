@@ -168,6 +168,40 @@ nav a {
   padding: 6px 0;
 }
 
+.details {
+  background: #f8fafc;
+  padding: 14px 18px;
+  border-left: 4px solid #b91c1c;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 6px 0;
+  border-bottom: 1px dashed #d1d5db;
+}
+
+.detail-row:last-child {
+  border-bottom: none;
+}
+
+.detail-name {
+  font-size: 14px;
+  color: #111827;
+  white-space: nowrap;
+}
+
+.detail-price {
+  font-size: 14px;
+  font-weight: 600;
+  color: #b91c1c;
+  white-space: nowrap;
+}
+
 /* FOOTER */
 .contacts {
   text-align: center;
