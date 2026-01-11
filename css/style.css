@@ -345,3 +345,22 @@ nav a {
   white-space: nowrap;
   font-weight: 600;
 }
+
+/* ===== ШИРОКИЕ ВЛОЖЕННЫЕ ЦЕННИКИ (КАК В ИМПЛАНТАЦИИ) ===== */
+.wide-details {
+  width: calc(100% - 48px);
+  margin: 16px 24px;
+}
+
+.wide-details > div {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 16px;
+}
+
+.wide-details span:last-child {
+  justify-self: end;
+  white-space: nowrap;
+  font-weight: 600;
+}
