@@ -183,13 +183,6 @@ nav a {
   white-space: nowrap;
 }
 
-.details div {
-  display: flex;
-  justify-content: space-between;
-  font-size: 14px;
-  padding: 6px 0;
-}
-
 /* FOOTER */
 .contacts {
   text-align: center;
