@@ -124,10 +124,11 @@ nav a {
   border-bottom: 1px solid #e5e7eb;
 }
 
-.service-row {
+.main-service-row {
   display: grid;
   grid-template-columns: 1fr 36px 140px;
   align-items: center;
+  cursor: pointer;
 }
 
 .toggle {
