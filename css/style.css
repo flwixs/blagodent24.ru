@@ -150,15 +150,37 @@ nav a {
   white-space: nowrap;
 }
 
-.details-row {
-  display: none;
-}
+/* ===== Раскрытые услуги (читаемо и спокойно) ===== */
 
 .details {
-  background: #f8fafc;
-  padding: 14px;
-  border-left: 4px solid #b91c1c;
-  border-radius: 8px;
+  background: #ffffff;
+  padding: 16px 20px;
+  margin-top: 12px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  font-size: 15px;
+}
+
+.detail-row + .detail-row {
+  border-top: 1px dashed #e5e7eb;
+}
+
+.detail-name {
+  color: #1f2933;
+  font-weight: 400;
+}
+
+.detail-price {
+  color: #111827; /* ← ЧЁРНЫЙ ЦВЕТ */
+  font-weight: 600;
+  white-space: nowrap;
 }
 
 .details div {
