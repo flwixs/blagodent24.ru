@@ -38,17 +38,17 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* ---------- РАСКРЫВАЮЩИЕСЯ УСЛУГИ ---------- */
-  document.querySelectorAll(".main-service-row").forEach(row => {
-    row.addEventListener("click", () => {
-      row.classList.toggle("active");
+document.querySelectorAll(".service-row").forEach(row => {
+  row.addEventListener("click", () => {
+    row.classList.toggle("active");
 
-      const details = row.nextElementSibling;
-      if (!details) return;
+    const details = row.querySelector(".details");
+    if (!details) return;
 
-      details.style.display =
-        details.style.display === "block" ? "none" : "block";
-    });
+    details.style.display =
+      details.style.display === "block" ? "none" : "block";
   });
+});
 
 });
 
