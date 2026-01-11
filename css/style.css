@@ -126,7 +126,7 @@ nav a {
 
 .service-row {
   display: grid;
-  grid-template-columns: 1fr 36px 140px;
+  grid-template-columns: 1fr 36px auto;
   align-items: center;
 }
 
@@ -144,6 +144,7 @@ nav a {
 }
 
 .price {
+  margin-left: auto;
   text-align: right;
   color: #b91c1c;
   font-weight: bold;
