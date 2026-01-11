@@ -51,3 +51,22 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 });
+
+// Функция смены языка
+function setLang(lang) {
+  document.querySelectorAll('[data-ru]').forEach(el => {
+    // Если есть data-ru и data-cn — заменяем textContent
+    if (el.dataset[lang]) {
+      el.textContent = el.dataset[lang];
+    }
+  });
+
+  // Сохраняем выбор в localStorage
+  localStorage.setItem('siteLang', lang);
+}
+
+// При загрузке страницы — применяем ранее выбранный язык
+document.addEventListener("DOMContentLoaded", () => {
+  const savedLang = localStorage.getItem('siteLang') || 'ru';
+  setLang(savedLang);
+});
