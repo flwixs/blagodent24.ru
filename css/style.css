@@ -1,137 +1,154 @@
 * {
   box-sizing: border-box;
-  font-family: system-ui, sans-serif;
 }
 
 body {
   margin: 0;
-  background: radial-gradient(circle at top, #fff5f0, #fdfefe);
-  color: #111;
+  font-family: Arial, sans-serif;
+  background: radial-gradient(circle at top, #fff5f5, #eef2f7);
 }
 
 .header {
   display: flex;
   justify-content: space-between;
-  padding: 14px 20px;
+  align-items: center;
+  padding: 16px 32px;
+  background: white;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
 }
 
 .logo span {
   color: #b91c1c;
 }
 
-.lang-switch button {
-  font-size: 18px;
-  background: none;
-  border: none;
+nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #334155;
+}
+
+.lang-switch span {
   cursor: pointer;
+  margin-left: 8px;
+  font-size: 20px;
 }
 
 .hero {
-  padding: 40px 20px;
+  padding: 90px 20px;
+  text-align: center;
+  color: white;
+  background: linear-gradient(135deg, #7f1d1d, #b91c1c);
 }
 
-.main-btn {
-  background: #b91c1c;
-  color: #fff;
-  border-radius: 999px;
-  padding: 12px 26px;
+.hero button {
+  margin-top: 20px;
+  padding: 14px 28px;
   border: none;
-  cursor: pointer;
+  border-radius: 30px;
+  background: white;
+  color: #7f1d1d;
+  font-size: 16px;
+  font-weight: bold;
 }
 
-.prices {
-  max-width: 900px;
-  margin: auto;
+.price-section {
+  max-width: 1000px;
+  margin: 60px auto;
   padding: 20px;
 }
 
-.card {
-  background: #fff;
-  border-radius: 16px;
-  margin-bottom: 20px;
+.price-card {
+  background: white;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.1);
+  margin-bottom: 40px;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0,0,0,.08);
 }
 
-.card-header {
-  padding: 16px 20px;
-  display: flex;
-  justify-content: space-between;
-  color: #fff;
+.price-header {
+  padding: 18px;
+  color: white;
+  font-size: 20px;
+  background: linear-gradient(90deg, #0f4c81, #b91c1c);
+}
+
+.price-header.red {
+  background: #991b1b;
+}
+
+.price-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.price-table td {
+  padding: 16px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.service-row {
+  display: grid;
+  grid-template-columns: 1fr 40px auto;
+  align-items: center;
+}
+
+.toggle {
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
   cursor: pointer;
 }
 
-.gradient-blue {
-  background: linear-gradient(90deg, #1e3a8a, #b91c1c);
-}
-
-.gradient-red {
-  background: linear-gradient(90deg, #7f1d1d, #dc2626);
-}
-
-.card-body {
-  display: none;
-  padding: 16px 20px;
-}
-
-.service-title {
-  font-weight: 600;
-  margin: 10px 0;
+.price {
+  color: #b91c1c;
+  font-weight: bold;
 }
 
 .details {
+  background: #f8fafc;
+  padding: 14px;
   border-left: 4px solid #b91c1c;
-  padding-left: 14px;
-  margin-bottom: 10px;
-}
-
-.detail-row {
-  display: flex;
-  justify-content: space-between;
-  padding: 6px 0;
-  border-bottom: 1px dashed #ddd;
-}
-
-.detail-row:last-child {
-  border-bottom: none;
-}
-
-/* MODAL */
-.modal {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,.4);
-}
-
-.modal-content {
-  background: #fff;
-  max-width: 360px;
-  margin: 10% auto;
-  padding: 20px;
-  border-radius: 16px;
-  position: relative;
-}
-
-.modal-content input {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
-}
-
-.modal-content button {
-  width: 100%;
-  background: #b91c1c;
-  color: #fff;
-  padding: 10px;
-  border: none;
   border-radius: 8px;
 }
 
-.close {
-  position: absolute;
-  top: 10px;
-  right: 14px;
-  font-size: 22px;
-  cursor: pointer;
+.details div {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  font-size: 14px;
+  padding: 6px 0;
+  border-bottom: 1px dashed #d1d5db;
+}
+
+.details div span:first-child {
+  flex: 1;
+}
+
+.details-row {
+  display: none;
+}
+
+.contacts {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.footer {
+  text-align: center;
+  padding: 20px;
+  background: #111;
+  color: white;
+}
+
+@media (max-width: 700px) {
+  nav {
+    display: none;
+  }
 }
