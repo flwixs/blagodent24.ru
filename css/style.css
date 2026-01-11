@@ -130,17 +130,31 @@ nav a {
   align-items: center;
 }
 
+.toggle:hover {
+  color: #b91c1c;
+  transform: scale(1.2);
+}
+
 .toggle {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 18px;
+  
+  width: 36px;
+  height: 36px;
+  
+  font-size: 22px;
   font-weight: bold;
-  transition: transform .3s;
+  
+  cursor: pointer;
+  user-select: none;
+  
+  transition: transform .25s ease, color .25s ease;
 }
 
 .main-service-row.active .toggle {
-  transform: rotate(45deg);
+  transform: rotate(45deg) scale(1.15);
+  color: #b91c1c;
 }
 
 .price {
