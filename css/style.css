@@ -170,41 +170,29 @@ nav a {
 }
 
 .details {
-  margin-top: 14px;
+  margin: 16px 24px;
   padding: 16px 18px;
-  animation: fadeIn .25s ease;
-
   background: #f8fafc;
   border-radius: 12px;
-
   border-left: 4px solid #b91c1c;
-  box-shadow: inset 0 0 0 1px #e5e7eb;
 }
 
 .details div {
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: 1fr auto; /* ← ключевое */
   align-items: center;
-
-  column-gap: 16px; /* 🔥 ВАЖНО */
-
-  padding: 8px 0;
-  font-size: 14px;
-}
-
-.details div:not(:last-child) {
+  gap: 16px;
+  padding: 10px 0;
   border-bottom: 1px dashed #e5e7eb;
 }
 
-.details div span:first-child {
-  color: #334155;
+.details div:last-child {
+  border-bottom: none;
 }
 
-.details div span:last-child {
+.details span:last-child {
   font-weight: 600;
-  color: #0f172a;
   white-space: nowrap;
-  text-align: right;
 }
 
 @keyframes fadeIn {
