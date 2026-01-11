@@ -320,3 +320,28 @@ nav a {
   font-size: 15px;
   line-height: 1.4;
 }
+
+/* === ВЫРАВНИВАЕМ ВЛОЖЕННЫЕ ЦЕННИКИ ВО ВСЕХ РАЗДЕЛАХ === */
+
+/* Растягиваем details на всю ширину карточки */
+.details-row .details {
+  width: 100%;
+  max-width: none;
+  margin-left: 24px;
+  margin-right: 24px;
+}
+
+/* Делаем строки как в имплантации */
+.details-row .details > div {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Цена строго справа */
+.details-row .details span:last-child {
+  justify-self: end;
+  white-space: nowrap;
+  font-weight: 600;
+}
