@@ -1,53 +1,43 @@
-document.addEventListener("DOMContentLoaded", () => {
+let currentLang = 'ru';
 
-  /* ---------- ФОРМА ---------- */
-  const form = document.getElementById("appointmentForm");
-  if (form) {
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
+function setLang(lang) {
+  currentLang = lang;
+  document.querySelectorAll('[data-ru]').forEach(el => {
+    el.textContent = el.dataset[lang];
+  });
+}
 
-      const data = new FormData(form);
+setLang('ru');
 
-      const name = data.get("name");
-      const phone = data.get("phone");
-      const service = data.get("service");
-      const date = data.get("date");
-      const time = data.get("time");
+function toggleCard(header) {
+  const body = header.nextElementSibling;
+  const icon = header.querySelector('.toggle');
 
-      const message = `
-🦷 Новая запись
-👤 Имя: ${name}
-📞 Телефон: ${phone}
-🛠 Услуга: ${service}
-📅 Дата: ${date}
-⏰ Время: ${time}
-      `;
+  body.style.display = body.style.display === 'block' ? 'none' : 'block';
+  icon.textContent = body.style.display === 'block' ? '×' : '+';
+}
 
-      fetch("https://api.telegram.org/bot8594224012:AAHLhbXSZJTFuDbgJfFwTf73nyGTc-dkB4o/sendMessage", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          chat_id: -1003630823385,
-          text: message
-        })
-      });
+function openForm() {
+  document.getElementById('formModal').style.display = 'block';
+}
 
-      alert("Заявка отправлена / 已发送");
-      form.reset();
-    });
-  }
+function closeForm() {
+  document.getElementById('formModal').style.display = 'none';
+}
 
-  /* ---------- РАСКРЫВАЮЩИЕСЯ УСЛУГИ ---------- */
-  document.querySelectorAll(".main-service-row").forEach(row => {
-    row.addEventListener("click", () => {
-      row.classList.toggle("active");
+function sendForm() {
+  const name = document.getElementById('name').value;
+  const phone = document.getElementById('phone').value;
+  const time = document.getElementById('datetime').value;
 
-      const details = row.nextElementSibling;
-      if (!details) return;
-
-      details.style.display =
-        details.style.display === "block" ? "none" : "block";
-    });
+  fetch("https://api.telegram.org/botВАШ_ТОКЕН/sendMessage", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      chat_id: "-1003630823385",
+      text: `🦷 Новая запись\n👤 Имя: ${name}\n📞 Телефон: ${phone}\n🕒 Дата: ${time}`
+    })
   });
 
-});
+  closeForm();
+}
