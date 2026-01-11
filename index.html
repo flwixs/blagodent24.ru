@@ -11,12 +11,10 @@
 <header class="header">
   <div class="container header-inner">
     <div class="logo">Благо<span>Дент24</span></div>
-
     <nav>
       <a href="#services" data-ru="Услуги" data-cn="服务">Услуги</a>
       <a href="#contacts" data-ru="Контакты" data-cn="联系方式">Контакты</a>
     </nav>
-
     <div class="lang-switch">
       <button onclick="setLang('ru')">🇷🇺</button>
       <button onclick="setLang('cn')">🇨🇳</button>
@@ -26,84 +24,99 @@
 
 <section id="services" class="price-section">
   <div class="container">
-
     <h2 data-ru="Услуги и цены" data-cn="服务与价格">Услуги и цены</h2>
 
-    <!-- ================= ЛЕЧЕНИЕ ЗУБОВ ================= -->
+    <input id="priceSearch" type="text"
+      placeholder="Поиск услуги..."
+      data-ru-placeholder="Поиск услуги..."
+      data-cn-placeholder="搜索服务..."
+    >
+
+    <!-- ================= ТЕРАПИЯ ================= -->
     <div class="price-card">
-      <div class="price-header">
-        🦷 <span data-ru="Лечение зубов" data-cn="牙齿治疗">Лечение зубов</span>
+      <div class="price-header">🦷 <span data-ru="Терапия" data-cn="治疗牙科">Терапия</span></div>
+
+      <!-- Консультация -->
+      <div class="main-service-row searchable">
+        <div class="service-row">
+          <span data-ru="Консультация стоматолога-терапевта" data-cn="牙医咨询">Консультация стоматолога-терапевта</span>
+          <span class="toggle">+</span>
+          <span class="price" data-ru="0 ₽" data-cn="免费">0 ₽</span>
+        </div>
       </div>
 
-      <div class="service-block">
+      <!-- Кариес -->
+      <div class="main-service-row searchable">
+        <div class="service-row">
+          <span data-ru="Лечение кариеса" data-cn="龋齿治疗">Лечение кариеса</span>
+          <span class="toggle">+</span>
+          <span class="price" data-ru="от 4 350 ₽" data-cn="起价 4350 ₽">от 4 350 ₽</span>
+        </div>
+      </div>
+      <div class="details-row">
+        <div class="details">
+          <div><span data-ru="Анестезия" data-cn="麻醉">Анестезия</span><span>1 500 ₽</span></div>
+          <div><span data-ru="Препарирование" data-cn="处理">Препарирование</span><span>3 000 ₽</span></div>
+          <div><span data-ru="Пломбирование" data-cn="填充">Пломбирование</span><span>4 500 ₽</span></div>
+        </div>
+      </div>
 
-        <!-- Консультация -->
-        <div class="main-service-row">
-          <div class="service-row">
-            <span data-ru="Консультация стоматолога" data-cn="牙医咨询">Консультация стоматолога</span>
-            <span class="toggle">+</span>
-            <span class="price" data-ru="0 ₽" data-cn="免费">0 ₽</span>
-          </div>
+      <!-- Пульпит -->
+      <div class="main-service-row searchable">
+        <div class="service-row">
+          <span data-ru="Лечение пульпита" data-cn="牙髓炎治疗">Лечение пульпита</span>
+          <span class="toggle">+</span>
+          <span class="price" data-ru="от 23 980 ₽" data-cn="起价 23980 ₽">от 23 980 ₽</span>
         </div>
-
-        <!-- Кариес -->
-        <div class="main-service-row">
-          <div class="service-row">
-            <span data-ru="Лечение кариеса" data-cn="龋齿治疗">Лечение кариеса</span>
-            <span class="toggle">+</span>
-            <span class="price" data-ru="от 9 000 ₽" data-cn="起价 9000 ₽">от 9 000 ₽</span>
-          </div>
+      </div>
+      <div class="details-row">
+        <div class="details">
+          <div><span data-ru="Анестезия" data-cn="麻醉">Анестезия</span><span>1 500 ₽</span></div>
+          <div><span data-ru="Лечение каналов" data-cn="根管治疗">Лечение каналов</span><span>8 000 ₽</span></div>
+          <div><span data-ru="Восстановление" data-cn="修复">Восстановление</span><span>5 500 ₽</span></div>
         </div>
-        <div class="details-row">
-          <div class="details">
-            <div><span data-ru="Анестезия" data-cn="麻醉">Анестезия</span><span>1 500 ₽</span></div>
-            <div><span data-ru="Препарирование" data-cn="处理">Препарирование</span><span>3 000 ₽</span></div>
-            <div><span data-ru="Пломбирование" data-cn="填充">Пломбирование</span><span>4 500 ₽</span></div>
-          </div>
-        </div>
-
-        <!-- Пульпит -->
-        <div class="main-service-row">
-          <div class="service-row">
-            <span data-ru="Лечение пульпита" data-cn="牙髓炎治疗">Лечение пульпита</span>
-            <span class="toggle">+</span>
-            <span class="price" data-ru="от 15 000 ₽" data-cn="起价 15000 ₽">от 15 000 ₽</span>
-          </div>
-        </div>
-        <div class="details-row">
-          <div class="details">
-            <div><span data-ru="Анестезия" data-cn="麻醉">Анестезия</span><span>1 500 ₽</span></div>
-            <div><span data-ru="Лечение каналов" data-cn="根管治疗">Лечение каналов</span><span>8 000 ₽</span></div>
-            <div><span data-ru="Пломбирование" data-cn="填充">Пломбирование</span><span>5 500 ₽</span></div>
-          </div>
-        </div>
-
       </div>
     </div>
 
     <!-- ================= ХИРУРГИЯ ================= -->
     <div class="price-card">
-      <div class="price-header red">
-        🩺 <span data-ru="Хирургия" data-cn="口腔外科">Хирургия</span>
+      <div class="price-header red">🩺 <span data-ru="Хирургия" data-cn="口腔外科">Хирургия</span></div>
+
+      <div class="main-service-row searchable">
+        <div class="service-row">
+          <span data-ru="Удаление зуба простое" data-cn="简单拔牙">Удаление зуба простое</span>
+          <span class="toggle">+</span>
+          <span class="price" data-ru="от 3 250 ₽" data-cn="起价 3250 ₽">от 3 250 ₽</span>
+        </div>
       </div>
 
-      <div class="service-block">
-
-        <div class="main-service-row">
-          <div class="service-row">
-            <span data-ru="Удаление зуба" data-cn="拔牙">Удаление зуба</span>
-            <span class="toggle">+</span>
-            <span class="price" data-ru="от 12 000 ₽" data-cn="起价 12000 ₽">от 12 000 ₽</span>
-          </div>
+      <div class="main-service-row searchable">
+        <div class="service-row">
+          <span data-ru="Удаление зуба сложное" data-cn="复杂拔牙">Удаление зуба сложное</span>
+          <span class="toggle">+</span>
+          <span class="price" data-ru="от 7 800 ₽" data-cn="起价 7800 ₽">от 7 800 ₽</span>
         </div>
-        <div class="details-row">
-          <div class="details">
-            <div><span data-ru="Анестезия" data-cn="麻醉">Анестезия</span><span>2 000 ₽</span></div>
-            <div><span data-ru="Удаление" data-cn="拔除">Удаление</span><span>7 000 ₽</span></div>
-            <div><span data-ru="Обработка" data-cn="处理">Обработка</span><span>3 000 ₽</span></div>
-          </div>
-        </div>
+      </div>
+    </div>
 
+    <!-- ================= ИМПЛАНТАЦИЯ ================= -->
+    <div class="price-card">
+      <div class="price-header">🦴 <span data-ru="Имплантация" data-cn="种植牙">Имплантация</span></div>
+
+      <div class="main-service-row searchable">
+        <div class="service-row">
+          <span data-ru="Установка импланта" data-cn="种植体植入">Установка импланта</span>
+          <span class="toggle">+</span>
+          <span class="price" data-ru="от 12 900 ₽" data-cn="起价 12900 ₽">от 12 900 ₽</span>
+        </div>
+      </div>
+
+      <div class="main-service-row searchable">
+        <div class="service-row">
+          <span data-ru="Синус-лифтинг" data-cn="上颌窦提升">Синус-лифтинг</span>
+          <span class="toggle">+</span>
+          <span class="price" data-ru="от 25 000 ₽" data-cn="起价 25000 ₽">от 25 000 ₽</span>
+        </div>
       </div>
     </div>
 
@@ -113,7 +126,6 @@
 <section class="appointment">
   <div class="appointment-card">
     <h2 data-ru="Запись на приём" data-cn="预约挂号">Запись на приём</h2>
-
     <form id="appointmentForm">
       <input type="text" name="name" placeholder="Имя" required>
       <input type="tel" name="phone" placeholder="Телефон" required>
@@ -122,9 +134,7 @@
   </div>
 </section>
 
-<footer class="footer">
-  © 2026 БлагоДент24
-</footer>
+<footer class="footer">© 2026 БлагоДент24</footer>
 
 <script src="js/main.js"></script>
 </body>
