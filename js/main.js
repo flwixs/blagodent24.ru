@@ -70,3 +70,20 @@ document.addEventListener("DOMContentLoaded", () => {
   const savedLang = localStorage.getItem('siteLang') || 'ru';
   setLang(savedLang);
 });
+
+// ===== РАСКРЫТИЕ УСЛУГ =====
+function toggleDetails(row) {
+  // переключаем плюсик
+  row.classList.toggle("active");
+
+  // следующая строка таблицы — это details-row
+  const detailsRow = row.nextElementSibling;
+  if (!detailsRow) return;
+
+  const details = detailsRow.querySelector(".details");
+  if (!details) return;
+
+  // показать / скрыть
+  details.style.display =
+    details.style.display === "block" ? "none" : "block";
+}
