@@ -5,18 +5,30 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: radial-gradient(circle at top, #fff5f5, #eef2f7);
+  background: radial-gradient(circle at top, #fdf6f0, #eef4f3);
+  overflow-x: hidden;
 }
 
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* HEADER */
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 16px 32px;
   background: white;
   position: sticky;
   top: 0;
   z-index: 10;
+  box-shadow: 0 2px 10px rgba(0,0,0,.05);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 0;
 }
 
 .logo {
@@ -29,58 +41,77 @@ body {
 }
 
 nav a {
-  margin-left: 20px;
+  margin-right: 20px;
   text-decoration: none;
   color: #334155;
 }
 
-.lang-switch span {
-  cursor: pointer;
-  margin-left: 8px;
+.lang-switch button {
+  background: none;
+  border: none;
   font-size: 20px;
+  cursor: pointer;
 }
 
+/* HERO */
 .hero {
-  padding: 90px 20px;
+  position: relative;
+  padding: 90px 0;
   text-align: center;
-  color: white;
-  background: linear-gradient(135deg, #7f1d1d, #b91c1c);
+  background: linear-gradient(135deg, #fdf6f0, #fbecec);
+}
+
+.chinese-clouds {
+  position: absolute;
+  top: 120px;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='80'%3E%3Cpath d='M0 40 Q25 10 50 40 T100 40 T150 40 T200 40' fill='none' stroke='%23b91c1c' stroke-width='2'/%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  opacity: .2;
+  pointer-events: none;
+}
+
+.hero h1 {
+  font-size: 40px;
+}
+
+.hero p {
+  font-size: 18px;
 }
 
 .hero button {
-  margin-top: 20px;
   padding: 14px 28px;
-  border: none;
   border-radius: 30px;
-  background: white;
-  color: #7f1d1d;
-  font-size: 16px;
-  font-weight: bold;
+  border: none;
+  background: #b91c1c;
+  color: white;
+  cursor: pointer;
 }
 
+/* PRICES */
 .price-section {
-  max-width: 1000px;
-  margin: 60px auto;
-  padding: 20px;
+  padding: 60px 0;
 }
 
 .price-card {
   background: white;
   border-radius: 14px;
   box-shadow: 0 10px 30px rgba(0,0,0,.1);
-  margin-bottom: 40px;
   overflow: hidden;
+  margin-bottom: 30px;
 }
 
 .price-header {
   padding: 18px;
   color: white;
   font-size: 20px;
-  background: linear-gradient(90deg, #0f4c81, #b91c1c);
+  background: linear-gradient(90deg,#0f4c81,#b91c1c);
 }
 
 .price-header.red {
-  background: #991b1b;
+  background: linear-gradient(90deg,#7f1d1d,#b91c1c);
 }
 
 .price-table {
@@ -95,20 +126,32 @@ nav a {
 
 .service-row {
   display: grid;
-  grid-template-columns: 1fr 40px auto;
+  grid-template-columns: 1fr 36px 140px;
   align-items: center;
 }
 
 .toggle {
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
   font-weight: bold;
-  font-size: 20px;
-  cursor: pointer;
+  transition: transform .3s;
+}
+
+.main-service-row.active .toggle {
+  transform: rotate(45deg);
 }
 
 .price {
+  text-align: right;
   color: #b91c1c;
   font-weight: bold;
+  white-space: nowrap;
+}
+
+.details-row {
+  display: none;
 }
 
 .details {
@@ -121,23 +164,14 @@ nav a {
 .details div {
   display: flex;
   justify-content: space-between;
-  gap: 16px;
   font-size: 14px;
   padding: 6px 0;
-  border-bottom: 1px dashed #d1d5db;
 }
 
-.details div span:first-child {
-  flex: 1;
-}
-
-.details-row {
-  display: none;
-}
-
+/* FOOTER */
 .contacts {
   text-align: center;
-  padding: 60px 20px;
+  padding: 60px 0;
 }
 
 .footer {
@@ -147,8 +181,79 @@ nav a {
   color: white;
 }
 
-@media (max-width: 700px) {
-  nav {
-    display: none;
-  }
+.appointment {
+  padding: 80px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.appointment-card {
+  max-width: 520px;
+  width: 100%;
+  background: rgba(255,255,255,0.95);
+  border-radius: 24px;
+  padding: 40px;
+  box-shadow: 0 20px 50px rgba(0,0,0,.15);
+  animation: breathing 10s ease-in-out infinite;
+}
+
+.appointment h2 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  text-align: center;
+  color: #64748b;
+  margin-bottom: 30px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 18px;
+}
+
+.field label {
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: #334155;
+}
+
+.field input,
+.field select {
+  padding: 14px;
+  border-radius: 14px;
+  border: 1px solid #cbd5e1;
+  font-size: 15px;
+}
+
+.field input:focus,
+.field select:focus {
+  outline: none;
+  border-color: #b91c1c;
+}
+
+.appointment button {
+  width: 100%;
+  margin-top: 10px;
+  padding: 16px;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(135deg,#7f1d1d,#b91c1c);
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.appointment button:hover {
+  opacity: .95;
+}
+
+.note {
+  font-size: 12px;
+  text-align: center;
+  color: #94a3b8;
+  margin-top: 12px;
 }
