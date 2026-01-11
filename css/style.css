@@ -150,36 +150,38 @@ nav a {
   white-space: nowrap;
 }
 
-/* ===== Раскрытые услуги (читаемо и спокойно) ===== */
+/* ===== ПРЕМИУМ ОФОРМЛЕНИЕ РАСКРЫТЫХ УСЛУГ ===== */
 
 .details {
   background: #ffffff;
-  padding: 16px 20px;
-  margin-top: 12px;
-  border-radius: 10px;
+  padding: 14px 18px;
+  margin: 14px 0 6px;
+  border-radius: 12px;
   border: 1px solid #e5e7eb;
+  max-width: 360px;
 }
 
-.detail-row {
+/* строка услуги */
+.details div {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 8px 0;
-  font-size: 15px;
+  gap: 16px;
+  padding: 6px 0;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #1f2937;
 }
 
-.detail-row + .detail-row {
+/* разделитель между строками */
+.details div + div {
   border-top: 1px dashed #e5e7eb;
 }
 
-.detail-name {
-  color: #1f2933;
-  font-weight: 400;
-}
-
-.detail-price {
-  color: #111827; /* ← ЧЁРНЫЙ ЦВЕТ */
+/* цена */
+.details div span:last-child {
   font-weight: 600;
+  color: #111827; /* чёрный */
   white-space: nowrap;
 }
 
