@@ -125,10 +125,10 @@ nav a {
 }
 
 .service-row {
-  width: 100%;
   display: grid;
-  grid-template-columns: 1fr 60px auto;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
+  width: 100%;
 }
 
 .toggle:hover {
@@ -137,19 +137,19 @@ nav a {
 }
 
 .toggle {
+  justify-self: center;
+
+  width: 40px;
+  height: 40px;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  
-  width: 60px;
-  height: 40px;
-  
+
   font-size: 24px;
   font-weight: bold;
-  
   cursor: pointer;
-  user-select: none;
-  
+
   transition: transform .25s ease, color .25s ease;
 }
 
@@ -159,12 +159,10 @@ nav a {
 }
 
 .price {
-  padding-right: 6px;
-  margin-left: auto;
+  justify-self: end;
   text-align: right;
   color: #b91c1c;
   font-weight: bold;
-  white-space: nowrap;
 }
 
 .details-row {
