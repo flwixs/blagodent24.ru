@@ -23,29 +23,34 @@ document.addEventListener("DOMContentLoaded", () => {
 ⏰ Время: ${time}
       `;
 
+      
       fetch("https://long-water-566b.jobwarce.workers.dev/", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          name: name,
-          phone: phone,
-          service: service,
-          page: window.location.href
-        })
-      })
-        .then(response => response.json())
-        .then(data => {
-          if (data.ok) {
-            alert("Спасибо! Мы скоро свяжемся с вами.");
-          } else {
-            alert("Ошибка отправки");
-          }
-        });
-
-      alert("Заявка отправлена / 已发送");
-      form.reset();
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify({
+    name,
+    phone,
+    service,
+    date,
+    time,
+    page: window.location.href
+  })
+})
+.then(res => res.json())
+.then(data => {
+  if (data.ok === true) {
+    alert("Спасибо! Мы скоро свяжемся с вами.");
+    form.reset();
+  } else {
+    alert("Ошибка отправки заявки");
+  }
+})
+.catch(err => {
+  console.error(err);
+  alert("Ошибка соединения");
+});
     });
   }
 
