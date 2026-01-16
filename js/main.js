@@ -23,14 +23,26 @@ document.addEventListener("DOMContentLoaded", () => {
 ⏰ Время: ${time}
       `;
 
-      fetch("https://api.telegram.org/bot8594224012:AAHLhbXSZJTFuDbgJfFwTf73nyGTc-dkB4o/sendMessage", {
+      fetch("https://long-water-566b.jobwarce.workers.dev/", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json"
+        },
         body: JSON.stringify({
-          chat_id: -1003630823385,
-          text: message
+          name: name,
+          phone: phone,
+          service: service,
+          page: window.location.href
         })
-      });
+      })
+        .then(response => response.json())
+        .then(data => {
+          if (data.ok) {
+            alert("Спасибо! Мы скоро свяжемся с вами.");
+          } else {
+            alert("Ошибка отправки");
+          }
+        });
 
       alert("Заявка отправлена / 已发送");
       form.reset();
