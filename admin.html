@@ -2,30 +2,66 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<title>Админка</title>
+<title>Админка сайта</title>
 <style>
-body{font-family:Arial;padding:20px}
-textarea{width:100%;height:400px}
-button{padding:10px 20px;margin-top:10px}
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+h1 {
+  margin-bottom: 10px;
+}
+textarea {
+  width: 100%;
+  height: 420px;
+  font-family: monospace;
+  font-size: 14px;
+}
+button {
+  margin-top: 10px;
+  padding: 10px 24px;
+  font-size: 14px;
+  cursor: pointer;
+}
+.status {
+  margin-top: 10px;
+}
 </style>
 </head>
 <body>
+
 <h1>Админка сайта</h1>
-<textarea id="data"></textarea><br>
+
+<textarea id="data" placeholder="Загрузка данных..."></textarea><br>
 <button onclick="save()">Сохранить</button>
+<div class="status" id="status"></div>
 
 <script>
-fetch('/api/content').then(r=>r.json()).then(d=>{
-  document.getElementById('data').value = JSON.stringify(d, null, 2)
-})
+const API = 'https://long-water-566b.jobwarce.workers.dev/api/content';
 
-function save(){
-  fetch('/api/content',{
-    method:'POST',
-    headers:{'Content-Type':'application/json'},
-    body:document.getElementById('data').value
-  }).then(()=>alert('Сохранено'))
+fetch(API)
+  .then(r => r.json())
+  .then(d => {
+    document.getElementById('data').value = JSON.stringify(d, null, 2);
+  })
+  .catch(() => {
+    document.getElementById('status').innerText = 'Ошибка загрузки данных';
+  });
+
+function save() {
+  fetch(API, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: document.getElementById('data').value
+  })
+  .then(() => {
+    document.getElementById('status').innerText = 'Сохранено успешно';
+  })
+  .catch(() => {
+    document.getElementById('status').innerText = 'Ошибка сохранения';
+  });
 }
 </script>
+
 </body>
 </html>
