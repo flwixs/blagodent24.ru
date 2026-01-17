@@ -23,36 +23,44 @@ document.addEventListener("DOMContentLoaded", () => {
 ⏰ Время: ${time}
       `;
 
-      
+
       fetch("https://long-water-566b.jobwarce.workers.dev/", {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json"
-  },
-  body: JSON.stringify({
-    name,
-    phone,
-    service,
-    date,
-    time,
-    page: window.location.href
-  })
-})
-.then(res => res.json())
-.then(data => {
-  if (data.ok === true) {
-    alert("Спасибо! Мы скоро свяжемся с вами.");
-    form.reset();
-  } else {
-    alert("Ошибка отправки заявки");
-  }
-})
-.catch(err => {
-  console.error(err);
-  alert("Ошибка соединения");
-});
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          name,
+          phone,
+          service,
+          date,
+          time,
+          page: window.location.href
+        })
+      })
+        .then(res => res.json())
+        .then(data => {
+          if (data.ok === true) {
+            alert("Спасибо! Мы скоро свяжемся с вами.");
+            form.reset();
+          } else {
+            alert("Ошибка отправки заявки");
+          }
+        })
+        .catch(err => {
+          console.error(err);
+          alert("Ошибка соединения");
+        });
     });
   }
+
+  fetch("https://long-water-566b.jobwarce.workers.dev/api/site")
+    .then(r => r.json())
+    .then(data => {
+      // data.services
+      // data.prices
+      // data.blog
+    });
 
   /* ---------- РАСКРЫВАЮЩИЕСЯ УСЛУГИ ---------- */
   document.querySelectorAll(".main-service-row").forEach(row => {
