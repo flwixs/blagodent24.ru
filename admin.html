@@ -2,64 +2,100 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<title>Админка сайта</title>
+<title>Админка — Благодент</title>
 <style>
-body {
-  font-family: Arial, sans-serif;
-  padding: 20px;
-}
-h1 {
-  margin-bottom: 10px;
-}
-textarea {
-  width: 100%;
-  height: 420px;
-  font-family: monospace;
-  font-size: 14px;
-}
-button {
-  margin-top: 10px;
-  padding: 10px 24px;
-  font-size: 14px;
-  cursor: pointer;
-}
-.status {
-  margin-top: 10px;
-}
+body { font-family: Arial; background:#f5f6f7; padding:20px }
+h1,h2 { margin-top:0 }
+.section { background:#fff; padding:15px; border-radius:8px; margin-bottom:20px }
+input, textarea { width:100%; padding:8px; margin-top:5px }
+button { margin-top:10px; padding:8px 20px; cursor:pointer }
+.item { border:1px solid #ddd; padding:10px; margin-top:10px }
 </style>
 </head>
 <body>
 
-<h1>Админка сайта</h1>
+<h1>Админка сайта «Благодент»</h1>
 
-<textarea id="data" placeholder="Загрузка данных..."></textarea><br>
-<button onclick="save()">Сохранить</button>
-<div class="status" id="status"></div>
+<div class="section">
+<h2>Основная информация</h2>
+<input id="title" placeholder="Название">
+<input id="phone" placeholder="Телефон">
+<input id="address" placeholder="Адрес">
+<textarea id="description" placeholder="Описание"></textarea>
+</div>
+
+<div class="section">
+<h2>Услуги</h2>
+<div id="services"></div>
+<button onclick="addService()">+ Добавить услугу</button>
+</div>
+
+<div class="section">
+<h2>Цены</h2>
+<div id="prices"></div>
+<button onclick="addPrice()">+ Добавить цену</button>
+</div>
+
+<div class="section">
+<h2>Блог</h2>
+<div id="blog"></div>
+<button onclick="addPost()">+ Добавить статью</button>
+</div>
+
+<button onclick="save()">💾 Сохранить всё</button>
+<div id="status"></div>
 
 <script>
-const API = 'https://long-water-566b.jobwarce.workers.dev/api/content';
+const API = "https://long-water-566b.jobwarce.workers.dev/api/site";
+let data = { info:{}, services:[], prices:[], blog:[] };
 
-fetch(API)
-  .then(r => r.json())
-  .then(d => {
-    document.getElementById('data').value = JSON.stringify(d, null, 2);
-  })
-  .catch(() => {
-    document.getElementById('status').innerText = 'Ошибка загрузки данных';
-  });
+fetch(API).then(r=>r.json()).then(d=>{
+ data = d || data;
+ document.getElementById('title').value = data.info?.title || "";
+ document.getElementById('phone').value = data.info?.phone || "";
+ document.getElementById('address').value = data.info?.address || "";
+ document.getElementById('description').value = data.info?.description || "";
+ render();
+});
 
-function save() {
-  fetch(API, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: document.getElementById('data').value
-  })
-  .then(() => {
-    document.getElementById('status').innerText = 'Сохранено успешно';
-  })
-  .catch(() => {
-    document.getElementById('status').innerText = 'Ошибка сохранения';
+function render(){
+ renderList("services", data.services, ["name","description","price"]);
+ renderList("prices", data.prices, ["title","price"]);
+ renderList("blog", data.blog, ["title","text","date"]);
+}
+
+function renderList(id, arr, fields){
+ const box = document.getElementById(id);
+ box.innerHTML="";
+ arr.forEach((item,i)=>{
+  let html='<div class="item">';
+  fields.forEach(f=>{
+   html+=`<input placeholder="${f}" value="${item[f]||""}" 
+    oninput="data.${id}[${i}].${f}=this.value">`;
   });
+  html+=`<button onclick="data.${id}.splice(${i},1);render()">Удалить</button></div>`;
+  box.innerHTML+=html;
+ });
+}
+
+function addService(){ data.services.push({}); render(); }
+function addPrice(){ data.prices.push({}); render(); }
+function addPost(){ data.blog.push({date:new Date().toISOString().slice(0,10)}); render(); }
+
+function save(){
+ data.info={
+  title:title.value,
+  phone:phone.value,
+  address:address.value,
+  description:description.value
+ };
+ fetch(API,{
+  method:"POST",
+  headers:{ "Content-Type":"application/json" },
+  body:JSON.stringify(data)
+ }).then(()=>{
+  status.innerText="Сохранено ✔";
+ });
 }
 </script>
 
